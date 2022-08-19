@@ -3,8 +3,19 @@
 #define RGBLIGHT_LAYERS
 
 
+// higher brightnesses are fine when plugged into a dock; but directly into a laptop, high brightnesses will drain too much power and make the keyboard reset.
+// ? or, maybe trying to work with too many rgb layers was the problem!
+#undef  RGBLIGHT_LIMIT_VAL
+#define RGBLIGHT_LIMIT_VAL 128
+
+#define RGBLIGHT_DEFAULT_VAL RGBLIGHT_LIMIT_VAL
+
+// #undef  RGBLIGHT_SLEEP
+
+
 #define HSV_KR_TEAL         70, 180, 167
 #define HSV_KR_ORANGE       13, 255, 167
+// ! these 2 still reset the keyboard if you stay on them for more than a second:
 #define HSV_KR_COOL_BLUE    140, 100, 167
 #define HSV_KR_MAUVE        236, 90, 165
 

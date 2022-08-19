@@ -21,14 +21,30 @@
   ),
 
 
+
+  select the stuff between each pipe:
+
+(?<=│)\s*[^│]*\s*(?=│)
+│\s*[^│]*\s*│
+
+
+
+
+
+
+
 [_LAYER12] = LAYOUT(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS, DF(6), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_GT, KC_PGUP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TG(3), KC_TRNS, TO(4), KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_END),
 
  [_LAYER0] = LAYOUT(QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL, KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1), KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
 
-select the stuff between each pipe:
+[_LAYER1] = LAYOUT(EEP_RST, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS, DF(6), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TO(4), KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_END),
 
-(?<=│)\s*[^│]*\s*(?=│)
-│\s*[^│]*\s*│
+[_LAYER2] = LAYOUT(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_VOLU, KC_MUTE, KC_NO, KC_NO, KC_NO, KC_TRNS, TO(3), KC_MPLY, KC_NO, KC_NO, KC_MPRV, KC_VOLD, KC_MNXT),
+
+[_LAYER3] = LAYOUT(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, RGB_RMOD, RGB_MOD, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, RGB_HUI, RGB_SAI, RGB_VAI, KC_NO, KC_NO, KC_NO, KC_TRNS, TO(0), RGB_TOG, KC_NO, KC_NO, RGB_HUD, RGB_SAD, RGB_VAD),
+
+[_LAYER4] = LAYOUT(KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BSPC, KC_TAB, KC_PLUS, KC_PMNS, KC_PAST, KC_PSLS, KC_CIRC, KC_COMM, KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_PERC, KC_DLR, KC_EQL, KC_CAPS, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_PDOT, KC_ENT, KC_LSFT, KC_BSLS, KC_LCBR, KC_LBRC, KC_LPRN, KC_LT, KC_GT, KC_RPRN, KC_RBRC, KC_RCBR, KC_SLSH, KC_RSFT, KC_UP, KC_DEL, KC_LCTL, KC_LGUI, KC_LALT, TG(5), TO(0), KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT)
+
 
 
 \[_LAYER\d\] = LAYOUT\(([\w|_],\s){7}
@@ -36,6 +52,138 @@ select the stuff between each pipe:
 
 find a layer defined in a json file from qmk configurator. allows reformatting it while keeping all the keycodes intact and grouped by row per half
 
-\[_LAYER(\d\d?)\] = LAYOUT\((?<L1>([\w|_]*,\s){7})(?<R1>([\w|_]*,\s){7})(?<L2>([\w|_]*,\s){6})(?<R2>([\w|_]*,\s){8})(?<L3>([\w|_]*,\s){6})(?<R3>([\w|_]*,\s){7})(?<L4>([\w|_]*,\s){6})(?<R4>([\w|_]*,\s){8})(?<L5>([\w|_|\(|\)]*,\s){5})(?<R5>([\w|_|\(|\)]*,?\s?){6})
+\[[\w_]*\]
+
+extract the layer name, then each row, from a layer exported from the qmk json converter
+
+\[([\w_]*)\] = LAYOUT\(((?:[\w_\(\)]*,\s){7})((?:[\w_\(\)]*,\s){7})((?:[\w_\(\)]*,\s){6})((?:[\w_\(\)]*,\s){8})((?:[\w_\(\)]*,\s){6})((?:[\w_\(\)]*,\s){7})((?:[\w_\(\)]*,\s){6})((?:[\w_\(\)]*,\s){8})((?:[\w_\(\)]*,\s){5})((?:[\w_\(\)]*,\s){5})([\w_\(\)]*)\)(,)?
+
+list them each on a separate line
+
+$1\n$2\n$3\n$4\n$5\n$6\n$7\n$8\n$9\n$10\n$11$12
+
+list them in a valid array with C comments
+
+[$1] = LAYOUT(
+    /* L1:   [esc]-> */ $2 /* <-[6] */
+    /* R1:     [7]-> */ $3 /* <-[backspace] */
+    /* L2:   [tab]-> */ $4 /* <-[t] */
+    /* R2:     [Y]-> */ $5 /* <-[f-slash] */
+    /* L3:  [caps]-> */ $6 /* <-[G] */
+    /* R3:     [H]-> */ $7 /* <-[enter] */
+    /* L4: [shift]-> */ $8 /* <-[B] */
+    /* R4:     [N]-> */ $9 /* <-[del] */
+    /* L5:  [ctrl]-> */ $10 /* <-[fn] */
+    /* R5: [space]-> */ $11$12 /* <-[right] */
+    )$13
 
 
+
+[_LAYER0] = LAYOUT(
+    QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, 
+    KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, 
+    KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, 
+    KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, 
+    KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, 
+    KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT, 
+    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, 
+    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL, 
+    KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1), 
+    KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
+    ),
+
+[_LAYER0] = LAYOUT(
+    /* left-1  */ QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, 
+    /* right-1 */ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, 
+    /* left-2  */ KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, 
+    /* right-2 */ &5
+    /* left-3  */ &6
+    /* right-3 */ &7
+    /* left-4  */ &8
+    /* right-4 */ &9
+    /* left-5  */ &10
+    /* right-5 */ &11KC_RGHT
+    ),
+
+
+[_LAYER0] = LAYOUT(
+    /* left-1  */ QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, 
+    /* right-1 */ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, 
+    /* left-2  */ KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, 
+    /* right-2 */ KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, 
+    /* left-3  */ KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, 
+    /* right-3 */ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT, 
+    /* left-4  */ KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, 
+    /* right-4 */ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL, 
+    /* left-5  */ KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1), 
+    /* right-5 */ KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
+    ),
+
+[_LAYER0] = LAYOUT(
+    /* left-1:  esc-> */ QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6,  /* <-6> */
+    /* right-1: 7-> */ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,  /* <-backspace */
+    /* left-2   tab-> */ KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T,  /* <-t */
+    /* right-2  y-> */ KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,  /* <-\| */
+    /* left-3   caps-> */ KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G,  /* <-g */
+    /* right-3  h-> */ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,  /* <-enter */
+    /* left-4   shift-> */ KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,  /* <-b */
+    /* right-4  n-> */ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,  /* <-del */
+    /* left-5   ctrl-> */ KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1),  /* <-fn */
+    /* right-5  space-> */ KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT /* <-right */
+    ),
+
+[_LAYER0] = LAYOUT(
+    /* L1:  esc-> */ QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6,  /* <-6> */
+    /* right-1: 7-> */ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,  /* <-backspace */
+    /* left-2   tab-> */ KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T,  /* <-t */
+    /* right-2  y-> */ KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,  /* <-\| */
+    /* left-3   caps-> */ KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G,  /* <-g */
+    /* right-3  h-> */ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,  /* <-enter */
+    /* left-4   shift-> */ KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,  /* <-b */
+    /* right-4  n-> */ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,  /* <-del */
+    /* left-5   ctrl-> */ KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1),  /* <-fn */
+    /* right-5  space-> */ KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT /* <-right */
+    ),
+
+[_LAYER0] = LAYOUT(
+    /* L1: esc-> */ QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6,  /* <-6> */
+    /* R1: 7-> */ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,  /* <-backspace */
+    /* L2: tab-> */ KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T,  /* <-t */
+    /* R2: y-> */ KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,  /* <-\| */
+    /* L3: caps-> */ KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G,  /* <-g */
+    /* R3: h-> */ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,  /* <-enter */
+    /* L4: shift-> */ KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,  /* <-b */
+    /* R4: n-> */ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,  /* <-del */
+    /* L5: ctrl-> */ KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1),  /* <-fn */
+    /* R5: space-> */ KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT /* <-right */
+    ),
+
+[_LAYER0] = LAYOUT(
+    /* L1:   [esc]-> */ QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6,  /* <-[6] */
+    /* R1:     [7]-> */ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,  /* <-[backspace] */
+    /* L2:   [tab]-> */ KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T,  /* <-[t] */
+    /* R2:     [Y]-> */ KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,  /* <-[f-slash] */
+    /* L3:  [caps]-> */ KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G,  /* <-[G] */
+    /* R3:     [H]-> */ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,  /* <-[enter] */
+    /* L4: [shift]-> */ KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,  /* <-[B] */
+    /* R4:     [N]-> */ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,  /* <-[del] */
+    /* L5:  [ctrl]-> */ KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1),  /* <-[fn] */
+    /* R5: [space]-> */ KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT /* <-[right] */
+    ),
+
+[_LAYER1] = LAYOUT(
+    /* L1:   [esc]-> */ EEP_RST, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,  /* <-[6] */
+    /* R1:     [7]-> */ KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS,  /* <-[backspace] */
+    /* L2:   [tab]-> */ DF(6), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[t] */
+    /* R2:     [Y]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[f-slash] */
+    /* L3:  [caps]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[G] */
+    /* R3:     [H]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[enter] */
+    /* L4: [shift]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[B] */
+    /* R4:     [N]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP, KC_TRNS,  /* <-[del] */
+    /* L5:  [ctrl]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[fn] */
+    /* R5: [space]-> */ TO(4), KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_END /* <-[right] */
+    ),
+
+[_LAYER0] = LAYOUT(QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL, KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1), KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
+
+[_LAYER0] = LAYOUT(QK_GESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL, KC_LCTL, KC_LGUI, KC_LALT, MO(2), MO(1), KC_SPC, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
