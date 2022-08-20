@@ -5,8 +5,10 @@
 
 // higher brightnesses are fine when plugged into a dock; but directly into a laptop, high brightnesses will drain too much power and make the keyboard reset.
 // ? or, maybe trying to work with too many rgb layers was the problem!
+// ? how to set up some kind of "low power mode"?
 #undef  RGBLIGHT_LIMIT_VAL
-#define RGBLIGHT_LIMIT_VAL 128
+// i thiiiiiiink 48 is ok. even at 56, it disconnected on the laptop.
+#define RGBLIGHT_LIMIT_VAL 48
 
 #define RGBLIGHT_DEFAULT_VAL RGBLIGHT_LIMIT_VAL
 
@@ -15,9 +17,9 @@
 
 #define HSV_KR_TEAL         70, 180, 167
 #define HSV_KR_ORANGE       13, 255, 167
-// ! these 2 still reset the keyboard if you stay on them for more than a second:
+// maybe the lower the saturation, the lower the brightness has to be? cool blue is the most likely color to make the keyboard reset while connected to a laptop.
 #define HSV_KR_COOL_BLUE    140, 100, 167
-#define HSV_KR_MAUVE        236, 90, 165
+#define HSV_KR_MAUVE        236, 90, 165 
 
 
 // #define HSV_KR_TEAL        
