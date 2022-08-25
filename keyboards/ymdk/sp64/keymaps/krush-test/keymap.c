@@ -212,7 +212,7 @@ enum layer_names {
 // Light LEDs in cyan when keyboard layer 0 is active
 const rgblight_segment_t PROGMEM rgb_layer_0[] = RGBLIGHT_LAYER_SEGMENTS(
     // {0, 12, 70, 180, 167}
-    {0, 12, HSV_KR_TEAL}    // defined in config.h. will this even work?
+    {0, 6, HSV_KR_TEAL}    // defined in config.h. will this even work?
 );
 // Light LEDs in orange when keyboard layer 1 is active
 const rgblight_segment_t PROGMEM rgb_layer_1[] = RGBLIGHT_LAYER_SEGMENTS(
@@ -224,23 +224,31 @@ const rgblight_segment_t PROGMEM rgb_layer_2[] = RGBLIGHT_LAYER_SEGMENTS(
     // {0, 12, 140, 100, 167}
     {0, 12, HSV_KR_COOL_BLUE}
 );
-// mauve
-const rgblight_segment_t PROGMEM rgb_layer_3[] = RGBLIGHT_LAYER_SEGMENTS(
-    // {0, 12, 236, 90, 165}
-    {0, 12, HSV_KR_MAUVE}
+// // mauve
+// const rgblight_segment_t PROGMEM rgb_layer_3[] = RGBLIGHT_LAYER_SEGMENTS(
+//     // {0, 12, 236, 90, 165}
+//     {0, 12, HSV_KR_MAUVE}
+// );
+// // white
+// const rgblight_segment_t PROGMEM rgb_layer_4[] = RGBLIGHT_LAYER_SEGMENTS(
+//     {0, 12, 255, 255, 165}
+// );
+// // red
+// const rgblight_segment_t PROGMEM rgb_layer_5[] = RGBLIGHT_LAYER_SEGMENTS(
+//     {0, 12, HSV_RED}
+// );
+// // why doesn't this one work?? maybe eeprom?
+// const rgblight_segment_t PROGMEM rgb_layer_6[] = RGBLIGHT_LAYER_SEGMENTS(
+//     {0, 12, HSV_BLUE}
+// );
+
+// ? why doesn't this one work????
+const rgblight_segment_t PROGMEM rgb_layer_rgb[] = RGBLIGHT_LAYER_SEGMENTS(
+    {7, 1, HSV_RED},
+    {8, 1, HSV_GREEN},
+    {9, 1, HSV_BLUE}
 );
-// white
-const rgblight_segment_t PROGMEM rgb_layer_4[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 12, 255, 255, 165}
-);
-// red
-const rgblight_segment_t PROGMEM rgb_layer_5[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 12, HSV_RED}
-);
-// why doesn't this one work?? maybe eeprom?
-const rgblight_segment_t PROGMEM rgb_layer_6[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 12, HSV_BLUE}
-);
+
 // ! max 8 layers
 
 // Now define the array of layers. Later layers take precedence
@@ -248,15 +256,16 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_layer_0,
     rgb_layer_1,
     rgb_layer_2,
-    rgb_layer_3,
-    rgb_layer_4,
-    rgb_layer_5,
-    rgb_layer_6,
-    rgb_layer_1 //,
+    // rgb_layer_3,
+    // rgb_layer_4,
+    // rgb_layer_5,
+    // rgb_layer_6,
+    // rgb_layer_1 //,
     // rgb_layer_2,
     // rgb_layer_3,
     // rgb_layer_4,
     // rgb_layer_5
+    rgb_layer_rgb
 );
 
 void keyboard_post_init_user(void) {
@@ -275,12 +284,14 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
 
 // ? for these, can we use the same rgb layer for multiple keyboard layers? like if 7 is like 1, can we just use rgb layer 1 for keymap layer 7?
 layer_state_t layer_state_set_user(layer_state_t state) {
+    // rgblight_set_layer_state(0, layer_state_cmp(state, _L3_RGB));
+
     rgblight_set_layer_state(1, layer_state_cmp(state, _L1_FN));
     rgblight_set_layer_state(2, layer_state_cmp(state, _L2_MEDIA));
     rgblight_set_layer_state(3, layer_state_cmp(state, _L3_RGB));
-    rgblight_set_layer_state(4, layer_state_cmp(state, _L4_NUMRW));
-    rgblight_set_layer_state(5, layer_state_cmp(state, _L5_NUMPD));
-    rgblight_set_layer_state(6, layer_state_cmp(state, _L6_BASE2));
+    // rgblight_set_layer_state(4, layer_state_cmp(state, _L4_NUMRW));
+    // rgblight_set_layer_state(5, layer_state_cmp(state, _L5_NUMPD));
+    // rgblight_set_layer_state(6, layer_state_cmp(state, _L6_BASE2));
 
     // testing recycling layers...
     // ! this works for layer 7, but not 8 or 9. also, rgb layer 6 still acts weird...
@@ -290,7 +301,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         L9 then uses that default color. L8 just looks like L6.
         this is NOT caused by defining more than 8 layers in rgblight_segment_t*
     */
-    rgblight_set_layer_state(7, layer_state_cmp(state, _L7_FN2));
+    // rgbligh  t_set_layer_state(7, layer_state_cmp(state, _L7_FN2));
     // ! 8\25\22 these weren't commented out in the last commit. see if this changes anything
     // rgblight_set_layer_state(8, layer_state_cmp(state, _L8_MEDIA));
     // rgblight_set_layer_state(9, layer_state_cmp(state, _L9_RGB));
