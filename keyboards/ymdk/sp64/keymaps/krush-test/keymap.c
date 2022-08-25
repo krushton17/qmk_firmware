@@ -291,10 +291,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         this is NOT caused by defining more than 8 layers in rgblight_segment_t*
     */
     rgblight_set_layer_state(7, layer_state_cmp(state, _L7_FN2));
-    rgblight_set_layer_state(8, layer_state_cmp(state, _L8_MEDIA));
-    rgblight_set_layer_state(9, layer_state_cmp(state, _L9_RGB));
-    rgblight_set_layer_state(10, layer_state_cmp(state, _L10_NUMRW));
-    rgblight_set_layer_state(11, layer_state_cmp(state, _L11_NUMPD));
+    // ! 8\25\22 these weren't commented out in the last commit. see if this changes anything
+    // rgblight_set_layer_state(8, layer_state_cmp(state, _L8_MEDIA));
+    // rgblight_set_layer_state(9, layer_state_cmp(state, _L9_RGB));
+    // rgblight_set_layer_state(10, layer_state_cmp(state, _L10_NUMRW));
+    // rgblight_set_layer_state(11, layer_state_cmp(state, _L11_NUMPD));
 
     // ! there's something about these lines that really messed up the lighting in a weird way
     // rgblight_set_layer_state(1, layer_state_cmp(state, _L6_BASE2));
