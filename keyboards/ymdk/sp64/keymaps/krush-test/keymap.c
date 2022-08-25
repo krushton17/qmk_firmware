@@ -224,46 +224,17 @@ const rgblight_segment_t PROGMEM rgb_layer_5[] = RGBLIGHT_LAYER_SEGMENTS(
 const rgblight_segment_t PROGMEM rgb_layer_6[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 12, 236, 100, 165}
 );
-// ! max 8 layers, and the rest of these are redundant anyway!
-// // Light LEDs in orange when keyboard layer 1 is active
-// const rgblight_segment_t PROGMEM rgb_layer_7[] = RGBLIGHT_LAYER_SEGMENTS(
-//     // {0, 12, 13, 255, 167}
-//     {0, 12, HSV_KR_ORANGE}
-// );
-// // same as layer 2
-// const rgblight_segment_t PROGMEM rgb_layer_8[] = RGBLIGHT_LAYER_SEGMENTS(
-//     // {0, 12, 140, 100, 167}
-//     {0, 12, HSV_KR_COOL_BLUE}
-// );
-// // same as layer 3
-// const rgblight_segment_t PROGMEM rgb_layer_9[] = RGBLIGHT_LAYER_SEGMENTS(
-//     // {0, 12, 236, 90, 165}
-//     {0, 12, HSV_KR_MAUVE}
-// );
-// // same as layer 4
-// const rgblight_segment_t PROGMEM rgb_layer_10[] = RGBLIGHT_LAYER_SEGMENTS(
-//     {0, 12, 255, 255, 165}
-// );
-// // same as layer 5
-// const rgblight_segment_t PROGMEM rgb_layer_11[] = RGBLIGHT_LAYER_SEGMENTS(
-//     {0, 12, HSV_RED}
-// );
+// ! max 8 layers
 
 // Now define the array of layers. Later layers take precedence
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    rgb_layer_0,    // Overrides caps lock layer
-    rgb_layer_1,    // Overrides other layers
+    rgb_layer_0,
+    rgb_layer_1,
     rgb_layer_2,
     rgb_layer_3,
     rgb_layer_4,
     rgb_layer_5,
     rgb_layer_6
-    // rgb_layer_7,
-    // rgb_layer_8,
-    // rgb_layer_9,
-    // rgb_layer_10,
-    // rgb_layer_11
-    // my_capslock_layer,
 );
 
 void keyboard_post_init_user(void) {
@@ -274,6 +245,7 @@ void keyboard_post_init_user(void) {
 
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
+    // rgblight_set_layer_state(i, is_on)	Enable/disable lighting layer i based on value of bool is_on
     rgblight_set_layer_state(0, layer_state_cmp(state, _LAYER0));
     return state;
 }

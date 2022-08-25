@@ -1,25 +1,32 @@
 #pragma once
 
 #define RGBLIGHT_LAYERS
+// retain value when switching layers, enabling layers to change only the color. current value is returned by rgblight_get_val().
+#define RGBLIGHT_LAYERS_RETAIN_VAL
 
 
 // higher brightnesses are fine when plugged into a dock; but directly into a laptop, high brightnesses will drain too much power and make the keyboard reset.
 // ? or, maybe trying to work with too many rgb layers was the problem!
 // ? how to set up some kind of "low power mode"?
 #undef  RGBLIGHT_LIMIT_VAL
+// maximum level for "high power mode"
+#define RGBLIGHT_LIMIT_VAL      167
+// "lower power mode" value
 // i thiiiiiiink 48 is ok. even at 56, it disconnected on the laptop.
-#define RGBLIGHT_LIMIT_VAL 48
+#define RGBLIGHT_DEFAULT_VAL    48
+// default color upon resetting EEPROM is white for now; make teal to enable teal underglow while connected to a charging station!!
+#define RGBLIGHT_DEFAULT_SAT    0   //180
+#define RGBLIGHT_DEFAULT_HUE    70
 
-#define RGBLIGHT_DEFAULT_VAL RGBLIGHT_LIMIT_VAL
-
-// #undef  RGBLIGHT_SLEEP
+// keep this active to make it light up while connected to a charging station!!
+#undef  RGBLIGHT_SLEEP
 
 
 #define HSV_KR_TEAL         70, 180, 167
 #define HSV_KR_ORANGE       13, 255, 167
 // maybe the lower the saturation, the lower the brightness has to be? cool blue is the most likely color to make the keyboard reset while connected to a laptop.
 #define HSV_KR_COOL_BLUE    140, 100, 167
-#define HSV_KR_MAUVE        236, 90, 165 
+#define HSV_KR_MAUVE        236, 90, 167 
 
 
 // #define HSV_KR_TEAL        
