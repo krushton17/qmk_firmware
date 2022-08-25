@@ -140,15 +140,15 @@ enum layer_names {
     ),
 
 [_L7_FN2] = LAYOUT(
-    /* L1:   [esc]-> */ KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,  /* <-[6] */
+    /* L1:   [esc]-> */ EEP_RST, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,  /* <-[6] */
     /* R1:     [7]-> */ KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, TO(_L10_NUMRW),  /* <-[backspace] */
-    /* L2:   [tab]-> */ DF(0), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[t] */
+    /* L2:   [tab]-> */ DF(_L0_BASE), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[t] */
     /* R2:     [Y]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, DYN_REC_START1, DYN_REC_STOP, DYN_MACRO_PLAY1,  /* <-[f-slash] */
     /* L3:  [caps]-> */ KC_TRNS, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_TRNS,  /* <-[G] */
     /* R3:     [H]-> */ KC_TRNS, RSFT_T(KC_J), RCTL_T(KC_K), LALT_T(KC_L), RGUI_T(KC_SCLN), KC_TRNS, KC_TRNS,  /* <-[enter] */
     /* L4: [shift]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[B] */
     /* R4:     [N]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP, LCTL(KC_DEL),  /* <-[del] */
-    /* L5:  [ctrl]-> */ KC_TRNS, KC_TRNS, KC_TRNS, TG(9), KC_TRNS,  /* <-[fn] */
+    /* L5:  [ctrl]-> */ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  /* <-[fn] */
     /* R5: [space]-> */ LCTL(KC_BSPC), KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_END /* <-[right] */
     ),
 
@@ -239,7 +239,7 @@ const rgblight_segment_t PROGMEM rgb_layer_5[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 // why doesn't this one work?? maybe eeprom?
 const rgblight_segment_t PROGMEM rgb_layer_6[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 12, 236, 100, 165}
+    {0, 12, HSV_BLUE}
 );
 // ! max 8 layers
 
@@ -251,7 +251,12 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_layer_3,
     rgb_layer_4,
     rgb_layer_5,
-    rgb_layer_6
+    rgb_layer_6,
+    rgb_layer_1 //,
+    // rgb_layer_2,
+    // rgb_layer_3,
+    // rgb_layer_4,
+    // rgb_layer_5
 );
 
 void keyboard_post_init_user(void) {
@@ -277,6 +282,20 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(5, layer_state_cmp(state, _L5_NUMPD));
     rgblight_set_layer_state(6, layer_state_cmp(state, _L6_BASE2));
 
+    // testing recycling layers...
+    // ! this works for layer 7, but not 8 or 9. also, rgb layer 6 still acts weird...
+    /*
+        when you first activate _L6, it uses the default color from the EEPROM (?)
+        but if you activate L9 and then go back to L6, it uses rgb_layer_6.
+        L9 then uses that default color. L8 just looks like L6.
+        this is NOT caused by defining more than 8 layers in rgblight_segment_t*
+    */
+    rgblight_set_layer_state(7, layer_state_cmp(state, _L7_FN2));
+    rgblight_set_layer_state(8, layer_state_cmp(state, _L8_MEDIA));
+    rgblight_set_layer_state(9, layer_state_cmp(state, _L9_RGB));
+    rgblight_set_layer_state(10, layer_state_cmp(state, _L10_NUMRW));
+    rgblight_set_layer_state(11, layer_state_cmp(state, _L11_NUMPD));
+
     // ! there's something about these lines that really messed up the lighting in a weird way
     // rgblight_set_layer_state(1, layer_state_cmp(state, _L6_BASE2));
     // rgblight_set_layer_state(2, layer_state_cmp(state, _L7_FN2));
@@ -284,7 +303,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     // rgblight_set_layer_state(4, layer_state_cmp(state, _L9_RGB));
     // rgblight_set_layer_state(5, layer_state_cmp(state, _L10_NUMRW));
     // rgblight_set_layer_state(6, layer_state_cmp(state, _L11_NUMPD));
-    
+
     return state;
 }
 
