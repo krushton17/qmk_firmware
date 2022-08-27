@@ -89,7 +89,8 @@ enum layer_names {
     /* R5: [space]-> */ KC_P0, KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT /* <-[right] */
     ),
 };
-// # if defined RGBLIGHT_LAYERS
+
+# if defined RGBLIGHT_LAYERS
 
 // Light LEDs in cyan when keyboard layer 0 is active
 const rgblight_segment_t PROGMEM rgb_layer_base[] = RGBLIGHT_LAYER_SEGMENTS(
@@ -118,8 +119,6 @@ const rgblight_segment_t PROGMEM rgb_layer_nump[] = RGBLIGHT_LAYER_SEGMENTS(
     {3, 3, HSV_KR_MAUVE}
 );
 
-// ! max 8 layers
-
 // Now define the array of layers. Later layers take precedence
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_layer_base,
@@ -135,57 +134,19 @@ void keyboard_post_init_user(void) {
     rgblight_layers = my_rgb_layers;
 }
 
-
-
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     // rgblight_set_layer_state(i, is_on)	Enable/disable lighting layer i based on value of bool is_on
     rgblight_set_layer_state(0, layer_state_cmp(state, _L0_BASE));
-    // ! ^ maybe try adding a line here that sets the default state when the default layer is base2??
     return state;
 }
 
-
-// ? for these, can we use the same rgb layer for multiple keyboard layers? like if 7 is like 1, can we just use rgb layer 1 for keymap layer 7?
 layer_state_t layer_state_set_user(layer_state_t state) {
-    // ! now the base2 layer gets stuck on...
-    // rgblight_set_layer_state(1, layer_state_cmp(state, _L6_BASE2));
-    // ! and these ones only flash on for like a millisecond
     rgblight_set_layer_state(1, layer_state_cmp(state, _L1_FN));
     rgblight_set_layer_state(2, layer_state_cmp(state, _L2_MEDIA));
     rgblight_set_layer_state(3, layer_state_cmp(state, _L3_RGB));
     rgblight_set_layer_state(4, layer_state_cmp(state, _L4_NUMRW));
     rgblight_set_layer_state(5, layer_state_cmp(state, _L5_NUMPD));
-    // rgblight_set_layer_state(4, layer_state_cmp(state, _L4_NUMRW));
-    // rgblight_set_layer_state(5, layer_state_cmp(state, _L5_NUMPD));
-    // * these ones work fine
-    // rgblight_set_layer_state(2, layer_state_cmp(state, _L7_FN2));
-    // rgblight_set_layer_state(3, layer_state_cmp(state, _L8_MEDIA));
-    // rgblight_set_layer_state(4, layer_state_cmp(state, _L9_RGB));
-    // testing recycling layers...
-    // ! this works for layer 7, but not 8 or 9. also, rgb layer 6 still acts weird...
-    /*
-        when you first activate _L6, it uses the default color from the EEPROM (?)
-        but if you activate L9 and then go back to L6, it uses rgb_layer_6.
-        L9 then uses that default color. L8 just looks like L6.
-        this is NOT caused by defining more than 8 layers in rgblight_segment_t*
-    */
-    // rgbligh  t_set_layer_state(7, layer_state_cmp(state, _L7_FN2));
-    // ! 8\25\22 these weren't commented out in the last commit. see if this changes anything
-    // rgblight_set_layer_state(8, layer_state_cmp(state, _L8_MEDIA));
-    // rgblight_set_layer_state(9, layer_state_cmp(state, _L9_RGB));
-    // rgblight_set_layer_state(10, layer_state_cmp(state, _L10_NUMRW));
-    // rgblight_set_layer_state(11, layer_state_cmp(state, _L11_NUMPD));
-
-    // ! there's something about these lines that really messed up the lighting in a weird way
-    // rgblight_set_layer_state(1, layer_state_cmp(state, _L6_BASE2));
-    // rgblight_set_layer_state(2, layer_state_cmp(state, _L7_FN2));
-    // rgblight_set_layer_state(3, layer_state_cmp(state, _L8_MEDIA));
-    // rgblight_set_layer_state(4, layer_state_cmp(state, _L9_RGB));
-    // rgblight_set_layer_state(5, layer_state_cmp(state, _L10_NUMRW));
-    // rgblight_set_layer_state(6, layer_state_cmp(state, _L11_NUMPD));
-
     return state;
 }
 
-
-// #endif
+#endif
