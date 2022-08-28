@@ -90,7 +90,7 @@ enum layer_names {
     ),
 };
 
-// # if defined RGBLIGHT_LAYERS
+// RGB lighting
 
 // Light LEDs in cyan when keyboard layer 0 is active
 const rgblight_segment_t PROGMEM rgb_layer_base[] = RGBLIGHT_LAYER_SEGMENTS(
@@ -148,5 +148,3 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(5, layer_state_cmp(state, _L5_NUMPD));
     return state;
 }
-
-// #endif
